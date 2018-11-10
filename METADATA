@@ -1,0 +1,16 @@
+name: "epid-sdk"
+description:
+    "The Intel(R) Enhanced Privacy ID Software Development Kit"
+
+third_party {
+  url {
+    type: HOMEPAGE
+    value: "https://intel-epid-sdk.github.io/"
+  }
+  url {
+    type: GIT
+    value: "https://github.com/Intel-EPID-SDK/epid-sdk.git"
+  }
+  version: "6.0.1"
+  last_upgrade_date { year: 2018 month: 6 day: 14 }
+}
