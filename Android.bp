@@ -13,6 +13,7 @@ cc_defaults {
         "-Wno-missing-field-initializers",
         "-Wno-for-loop-analysis",
         "-Wno-unused-const-variable",
+        "-Wno-null-pointer-arithmetic",
         "-fexceptions",
         "-fPIC",
         "-O2",
