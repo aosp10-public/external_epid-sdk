@@ -1,18 +1,42 @@
-/*############################################################################
-  # Copyright 1999-2018 Intel Corporation
-  #
-  # Licensed under the Apache License, Version 2.0 (the "License");
-  # you may not use this file except in compliance with the License.
-  # You may obtain a copy of the License at
-  #
-  #     http://www.apache.org/licenses/LICENSE-2.0
-  #
-  # Unless required by applicable law or agreed to in writing, software
-  # distributed under the License is distributed on an "AS IS" BASIS,
-  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  # See the License for the specific language governing permissions and
-  # limitations under the License.
-  ############################################################################*/
+/*******************************************************************************
+* Copyright 2002-2018 Intel Corporation
+* All Rights Reserved.
+*
+* If this  software was obtained  under the  Intel Simplified  Software License,
+* the following terms apply:
+*
+* The source code,  information  and material  ("Material") contained  herein is
+* owned by Intel Corporation or its  suppliers or licensors,  and  title to such
+* Material remains with Intel  Corporation or its  suppliers or  licensors.  The
+* Material  contains  proprietary  information  of  Intel or  its suppliers  and
+* licensors.  The Material is protected by  worldwide copyright  laws and treaty
+* provisions.  No part  of  the  Material   may  be  used,  copied,  reproduced,
+* modified, published,  uploaded, posted, transmitted,  distributed or disclosed
+* in any way without Intel's prior express written permission.  No license under
+* any patent,  copyright or other  intellectual property rights  in the Material
+* is granted to  or  conferred  upon  you,  either   expressly,  by implication,
+* inducement,  estoppel  or  otherwise.  Any  license   under such  intellectual
+* property rights must be express and approved by Intel in writing.
+*
+* Unless otherwise agreed by Intel in writing,  you may not remove or alter this
+* notice or  any  other  notice   embedded  in  Materials  by  Intel  or Intel's
+* suppliers or licensors in any way.
+*
+*
+* If this  software  was obtained  under the  Apache License,  Version  2.0 (the
+* "License"), the following terms apply:
+*
+* You may  not use this  file except  in compliance  with  the License.  You may
+* obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+*
+*
+* Unless  required  by   applicable  law  or  agreed  to  in  writing,  software
+* distributed under the License  is distributed  on an  "AS IS"  BASIS,  WITHOUT
+* WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*
+* See the   License  for the   specific  language   governing   permissions  and
+* limitations under the License.
+*******************************************************************************/
 
 /* 
 //              Intel(R) Integrated Performance Primitives (Intel(R) IPP)
@@ -71,27 +95,27 @@ IPPAPI(IppStatus, ippsDESInit,(const Ipp8u* pKey, IppsDESSpec* pCtx))
 IPPAPI(IppStatus, ippsDESPack,(const IppsDESSpec* pCtx, Ipp8u* pBuffer))
 IPPAPI(IppStatus, ippsDESUnpack,(const Ipp8u* pBuffer, IppsDESSpec* pCtx))
 
-IPPAPI(IppStatus, ippsTDESEncryptECB,(const Ipp8u* pSrc, Ipp8u* pDst, int length,
+IPPAPI(IppStatus, ippsTDESEncryptECB,(const Ipp8u* pSrc, Ipp8u* pDst, int len,
                                       const IppsDESSpec* pCtx1, const IppsDESSpec* pCtx2, const IppsDESSpec* pCtx3,
                                       IppsCPPadding padding))
-IPPAPI(IppStatus, ippsTDESDecryptECB,(const Ipp8u* pSrc, Ipp8u* pDst, int length,
+IPPAPI(IppStatus, ippsTDESDecryptECB,(const Ipp8u* pSrc, Ipp8u* pDst, int len,
                                       const IppsDESSpec* pCtx1, const IppsDESSpec* pCtx2, const IppsDESSpec* pCtx3,
                                       IppsCPPadding padding))
 
-IPPAPI(IppStatus, ippsTDESEncryptCBC,(const Ipp8u* pSrc, Ipp8u* pDst, int length,
+IPPAPI(IppStatus, ippsTDESEncryptCBC,(const Ipp8u* pSrc, Ipp8u* pDst, int len,
                                       const IppsDESSpec* pCtx1, const IppsDESSpec* pCtx2, const IppsDESSpec* pCtx3,
                                       const Ipp8u* pIV,
                                       IppsCPPadding padding))
-IPPAPI(IppStatus, ippsTDESDecryptCBC,(const Ipp8u* pSrc, Ipp8u* pDst, int length,
+IPPAPI(IppStatus, ippsTDESDecryptCBC,(const Ipp8u* pSrc, Ipp8u* pDst, int len,
                                       const IppsDESSpec* pCtx1, const IppsDESSpec* pCtx2, const IppsDESSpec* pCtx3,
                                       const Ipp8u* pIV,
                                       IppsCPPadding padding))
 
-IPPAPI(IppStatus, ippsTDESEncryptCFB,(const Ipp8u* pSrc, Ipp8u* pDst, int length, int cfbBlkSize,
+IPPAPI(IppStatus, ippsTDESEncryptCFB,(const Ipp8u* pSrc, Ipp8u* pDst, int len, int cfbBlkSize,
                                       const IppsDESSpec* pCtx1, const IppsDESSpec* pCtx2, const IppsDESSpec* pCtx3,
                                       const Ipp8u* pIV,
                                       IppsCPPadding padding))
-IPPAPI(IppStatus, ippsTDESDecryptCFB,(const Ipp8u* pSrc, Ipp8u* pDst, int length, int cfbBlkSize,
+IPPAPI(IppStatus, ippsTDESDecryptCFB,(const Ipp8u* pSrc, Ipp8u* pDst, int len, int cfbBlkSize,
                                       const IppsDESSpec* pCtx1, const IppsDESSpec* pCtx2, const IppsDESSpec* pCtx3,
                                       const Ipp8u* pIV,
                                       IppsCPPadding padding))
@@ -123,7 +147,7 @@ IPPAPI(IppStatus, ippsAESGetSize,(int *pSize))
 IPPAPI(IppStatus, ippsAESInit,(const Ipp8u* pKey, int keyLen, IppsAESSpec* pCtx, int ctxSize))
 IPPAPI(IppStatus, ippsAESSetKey,(const Ipp8u* pKey, int keyLen, IppsAESSpec* pCtx))
 
-IPPAPI(IppStatus, ippsAESPack,(const IppsAESSpec* pCtx, Ipp8u* pBuffer, int buffSize))
+IPPAPI(IppStatus, ippsAESPack,(const IppsAESSpec* pCtx, Ipp8u* pBuffer, int bufSize))
 IPPAPI(IppStatus, ippsAESUnpack,(const Ipp8u* pBuffer, IppsAESSpec* pCtx, int ctxSize))
 
 IPPAPI(IppStatus, ippsAESEncryptECB,(const Ipp8u* pSrc, Ipp8u* pDst, int len,
@@ -263,15 +287,15 @@ IPPAPI(IppStatus, ippsSMS4_CCMGetTag,(Ipp8u* pTag, int tagLen, const IppsSMS4_CC
 
 /* AES-CCM */
 IPPAPI(IppStatus, ippsAES_CCMGetSize,(int* pSize))
-IPPAPI(IppStatus, ippsAES_CCMInit,(const Ipp8u* pKey, int keyLen, IppsAES_CCMState* pCtx, int ctxSize))
+IPPAPI(IppStatus, ippsAES_CCMInit,(const Ipp8u* pKey, int keyLen, IppsAES_CCMState* pState, int ctxSize))
 
-IPPAPI(IppStatus, ippsAES_CCMMessageLen,(Ipp64u msgLen, IppsAES_CCMState* pCtx))
-IPPAPI(IppStatus, ippsAES_CCMTagLen,(int tagLen, IppsAES_CCMState* pCtx))
+IPPAPI(IppStatus, ippsAES_CCMMessageLen,(Ipp64u msgLen, IppsAES_CCMState* pState))
+IPPAPI(IppStatus, ippsAES_CCMTagLen,(int tagLen, IppsAES_CCMState* pState))
 
-IPPAPI(IppStatus, ippsAES_CCMStart,(const Ipp8u* pIV, int ivLen, const Ipp8u* pAD, int adLen, IppsAES_CCMState* pCtx))
-IPPAPI(IppStatus, ippsAES_CCMEncrypt,(const Ipp8u* pSrc, Ipp8u* pDst, int len, IppsAES_CCMState* pCtx))
-IPPAPI(IppStatus, ippsAES_CCMDecrypt,(const Ipp8u* pSrc, Ipp8u* pDst, int len, IppsAES_CCMState* pCtx))
-IPPAPI(IppStatus, ippsAES_CCMGetTag,(Ipp8u* pTag, int tagLen, const IppsAES_CCMState* pCtx))
+IPPAPI(IppStatus, ippsAES_CCMStart,(const Ipp8u* pIV, int ivLen, const Ipp8u* pAD, int adLen, IppsAES_CCMState* pState))
+IPPAPI(IppStatus, ippsAES_CCMEncrypt,(const Ipp8u* pSrc, Ipp8u* pDst, int len, IppsAES_CCMState* pState))
+IPPAPI(IppStatus, ippsAES_CCMDecrypt,(const Ipp8u* pSrc, Ipp8u* pDst, int len, IppsAES_CCMState* pState))
+IPPAPI(IppStatus, ippsAES_CCMGetTag,(Ipp8u* pTag, int tagLen, const IppsAES_CCMState* pState))
 
 /* AES-GCM */
 IPPAPI(IppStatus, ippsAES_GCMGetSize,(int * pSize))
@@ -331,16 +355,24 @@ IPPAPI(IppStatus, ippsAES_CMACGetTag,(Ipp8u* pMD, int mdLen, const IppsAES_CMACS
 // RC4 Stream Ciphers
 // =========================================================
 */
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourCheckKey, (const Ipp8u *pKey, int keyLen, IppBool* pIsWeak))
 
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourGetSize, (int* pSize))
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourInit, (const Ipp8u *pKey, int keyLen, IppsARCFourState *pCtx))
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourReset, (IppsARCFourState* pCtx))
 
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourPack,(const IppsARCFourState* pCtx, Ipp8u* pBuffer))
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourUnpack,(const Ipp8u* pBuffer, IppsARCFourState* pCtx))
 
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourEncrypt, (const Ipp8u *pSrc, Ipp8u *pDst, int length, IppsARCFourState *pCtx))
+IPP_DEPRECATED("is deprecated. This function is obsolete and will be removed in one of the future IPP releases") \
 IPPAPI(IppStatus, ippsARCFourDecrypt, (const Ipp8u *pSrc, Ipp8u *pDst, int length, IppsARCFourState *pCtx))
 
 
@@ -352,106 +384,106 @@ IPPAPI(IppStatus, ippsARCFourDecrypt, (const Ipp8u *pSrc, Ipp8u *pDst, int lengt
 
 /* SHA1 Hash Primitives */
 IPPAPI(IppStatus, ippsSHA1GetSize,(int* pSize))
-IPPAPI(IppStatus, ippsSHA1Init,(IppsSHA1State* pCtx))
-IPPAPI(IppStatus, ippsSHA1Duplicate,(const IppsSHA1State* pSrcCtx, IppsSHA1State* pDstCtx))
+IPPAPI(IppStatus, ippsSHA1Init,(IppsSHA1State* pState))
+IPPAPI(IppStatus, ippsSHA1Duplicate,(const IppsSHA1State* pSrcState, IppsSHA1State* pDstState))
 
-IPPAPI(IppStatus, ippsSHA1Pack,(const IppsSHA1State* pCtx, Ipp8u* pBuffer))
-IPPAPI(IppStatus, ippsSHA1Unpack,(const Ipp8u* pBuffer, IppsSHA1State* pCtx))
+IPPAPI(IppStatus, ippsSHA1Pack,(const IppsSHA1State* pState, Ipp8u* pBuffer))
+IPPAPI(IppStatus, ippsSHA1Unpack,(const Ipp8u* pBuffer, IppsSHA1State* pState))
 
-IPPAPI(IppStatus, ippsSHA1Update,(const Ipp8u* pSrc, int len, IppsSHA1State* pCtx))
-IPPAPI(IppStatus, ippsSHA1GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA1State* pCtx))
-IPPAPI(IppStatus, ippsSHA1Final,(Ipp8u* pMD, IppsSHA1State* pCtx))
+IPPAPI(IppStatus, ippsSHA1Update,(const Ipp8u* pSrc, int len, IppsSHA1State* pState))
+IPPAPI(IppStatus, ippsSHA1GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA1State* pState))
+IPPAPI(IppStatus, ippsSHA1Final,(Ipp8u* pMD, IppsSHA1State* pState))
 IPPAPI(IppStatus, ippsSHA1MessageDigest,(const Ipp8u* pMsg, int len, Ipp8u* pMD))
 
 /* SHA224 Hash Primitives */
 IPPAPI(IppStatus, ippsSHA224GetSize,(int* pSize))
-IPPAPI(IppStatus, ippsSHA224Init,(IppsSHA224State* pCtx))
-IPPAPI(IppStatus, ippsSHA224Duplicate,(const IppsSHA224State* pSrcCtx, IppsSHA224State* pDstCtx))
+IPPAPI(IppStatus, ippsSHA224Init,(IppsSHA224State* pState))
+IPPAPI(IppStatus, ippsSHA224Duplicate,(const IppsSHA224State* pSrcState, IppsSHA224State* pDstState))
 
-IPPAPI(IppStatus, ippsSHA224Pack,(const IppsSHA224State* pCtx, Ipp8u* pBuffer))
-IPPAPI(IppStatus, ippsSHA224Unpack,(const Ipp8u* pBuffer, IppsSHA224State* pCtx))
+IPPAPI(IppStatus, ippsSHA224Pack,(const IppsSHA224State* pState, Ipp8u* pBuffer))
+IPPAPI(IppStatus, ippsSHA224Unpack,(const Ipp8u* pBuffer, IppsSHA224State* pState))
 
-IPPAPI(IppStatus, ippsSHA224Update,(const Ipp8u* pSrc, int len, IppsSHA224State* pCtx))
-IPPAPI(IppStatus, ippsSHA224GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA224State* pCtx))
-IPPAPI(IppStatus, ippsSHA224Final,(Ipp8u* pMD, IppsSHA224State* pCtx))
+IPPAPI(IppStatus, ippsSHA224Update,(const Ipp8u* pSrc, int len, IppsSHA224State* pState))
+IPPAPI(IppStatus, ippsSHA224GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA224State* pState))
+IPPAPI(IppStatus, ippsSHA224Final,(Ipp8u* pMD, IppsSHA224State* pState))
 IPPAPI(IppStatus, ippsSHA224MessageDigest,(const Ipp8u* pMsg, int len, Ipp8u* pMD))
 
 /* SHA256 Hash Primitives */
 IPPAPI(IppStatus, ippsSHA256GetSize,(int* pSize))
-IPPAPI(IppStatus, ippsSHA256Init,(IppsSHA256State* pCtx))
-IPPAPI(IppStatus, ippsSHA256Duplicate,(const IppsSHA256State* pSrcCtx, IppsSHA256State* pDstCtx))
+IPPAPI(IppStatus, ippsSHA256Init,(IppsSHA256State* pState))
+IPPAPI(IppStatus, ippsSHA256Duplicate,(const IppsSHA256State* pSrcState, IppsSHA256State* pDstState))
 
-IPPAPI(IppStatus, ippsSHA256Pack,(const IppsSHA256State* pCtx, Ipp8u* pBuffer))
-IPPAPI(IppStatus, ippsSHA256Unpack,(const Ipp8u* pBuffer, IppsSHA256State* pCtx))
+IPPAPI(IppStatus, ippsSHA256Pack,(const IppsSHA256State* pState, Ipp8u* pBuffer))
+IPPAPI(IppStatus, ippsSHA256Unpack,(const Ipp8u* pBuffer, IppsSHA256State* pState))
 
-IPPAPI(IppStatus, ippsSHA256Update,(const Ipp8u* pSrc, int len, IppsSHA256State* pCtx))
-IPPAPI(IppStatus, ippsSHA256GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA256State* pCtx))
-IPPAPI(IppStatus, ippsSHA256Final,(Ipp8u* pMD, IppsSHA256State* pCtx))
+IPPAPI(IppStatus, ippsSHA256Update,(const Ipp8u* pSrc, int len, IppsSHA256State* pState))
+IPPAPI(IppStatus, ippsSHA256GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA256State* pState))
+IPPAPI(IppStatus, ippsSHA256Final,(Ipp8u* pMD, IppsSHA256State* pState))
 IPPAPI(IppStatus, ippsSHA256MessageDigest,(const Ipp8u* pMsg, int len, Ipp8u* pMD))
 
 /* SHA384 Hash Primitives */
 IPPAPI(IppStatus, ippsSHA384GetSize,(int* pSize))
-IPPAPI(IppStatus, ippsSHA384Init,(IppsSHA384State* pCtx))
-IPPAPI(IppStatus, ippsSHA384Duplicate,(const IppsSHA384State* pSrcCtx, IppsSHA384State* pDstCtx))
+IPPAPI(IppStatus, ippsSHA384Init,(IppsSHA384State* pState))
+IPPAPI(IppStatus, ippsSHA384Duplicate,(const IppsSHA384State* pSrcState, IppsSHA384State* pDstState))
 
-IPPAPI(IppStatus, ippsSHA384Pack,(const IppsSHA384State* pCtx, Ipp8u* pBuffer))
-IPPAPI(IppStatus, ippsSHA384Unpack,(const Ipp8u* pBuffer, IppsSHA384State* pCtx))
+IPPAPI(IppStatus, ippsSHA384Pack,(const IppsSHA384State* pState, Ipp8u* pBuffer))
+IPPAPI(IppStatus, ippsSHA384Unpack,(const Ipp8u* pBuffer, IppsSHA384State* pState))
 
-IPPAPI(IppStatus, ippsSHA384Update,(const Ipp8u* pSrc, int len, IppsSHA384State* pCtx))
-IPPAPI(IppStatus, ippsSHA384GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA384State* pCtx))
-IPPAPI(IppStatus, ippsSHA384Final,(Ipp8u* pMD, IppsSHA384State* pCtx))
+IPPAPI(IppStatus, ippsSHA384Update,(const Ipp8u* pSrc, int len, IppsSHA384State* pState))
+IPPAPI(IppStatus, ippsSHA384GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA384State* pState))
+IPPAPI(IppStatus, ippsSHA384Final,(Ipp8u* pMD, IppsSHA384State* pState))
 IPPAPI(IppStatus, ippsSHA384MessageDigest,(const Ipp8u* pMsg, int len, Ipp8u* pMD))
 
 /* SHA512 Hash Primitives */
 IPPAPI(IppStatus, ippsSHA512GetSize,(int* pSize))
-IPPAPI(IppStatus, ippsSHA512Init,(IppsSHA512State* pCtx))
-IPPAPI(IppStatus, ippsSHA512Duplicate,(const IppsSHA512State* pSrcCtx, IppsSHA512State* pDstCtx))
+IPPAPI(IppStatus, ippsSHA512Init,(IppsSHA512State* pState))
+IPPAPI(IppStatus, ippsSHA512Duplicate,(const IppsSHA512State* pSrcState, IppsSHA512State* pDstState))
 
-IPPAPI(IppStatus, ippsSHA512Pack,(const IppsSHA512State* pCtx, Ipp8u* pBuffer))
-IPPAPI(IppStatus, ippsSHA512Unpack,(const Ipp8u* pBuffer, IppsSHA512State* pCtx))
+IPPAPI(IppStatus, ippsSHA512Pack,(const IppsSHA512State* pState, Ipp8u* pBuffer))
+IPPAPI(IppStatus, ippsSHA512Unpack,(const Ipp8u* pBuffer, IppsSHA512State* pState))
 
-IPPAPI(IppStatus, ippsSHA512Update,(const Ipp8u* pSrc, int len, IppsSHA512State* pCtx))
-IPPAPI(IppStatus, ippsSHA512GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA512State* pCtx))
-IPPAPI(IppStatus, ippsSHA512Final,(Ipp8u* pMD, IppsSHA512State* pCtx))
+IPPAPI(IppStatus, ippsSHA512Update,(const Ipp8u* pSrc, int len, IppsSHA512State* pState))
+IPPAPI(IppStatus, ippsSHA512GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSHA512State* pState))
+IPPAPI(IppStatus, ippsSHA512Final,(Ipp8u* pMD, IppsSHA512State* pState))
 IPPAPI(IppStatus, ippsSHA512MessageDigest,(const Ipp8u* pMsg, int len, Ipp8u* pMD))
 
 /* MD5 Hash Primitives */
 IPPAPI(IppStatus, ippsMD5GetSize,(int* pSize))
-IPPAPI(IppStatus, ippsMD5Init,(IppsMD5State* pCtx))
-IPPAPI(IppStatus, ippsMD5Duplicate,(const IppsMD5State* pSrcCtx, IppsMD5State* pDstCtx))
+IPPAPI(IppStatus, ippsMD5Init,(IppsMD5State* pState))
+IPPAPI(IppStatus, ippsMD5Duplicate,(const IppsMD5State* pSrcState, IppsMD5State* pDstState))
 
-IPPAPI(IppStatus, ippsMD5Pack,(const IppsMD5State* pCtx, Ipp8u* pBuffer))
-IPPAPI(IppStatus, ippsMD5Unpack,(const Ipp8u* pBuffer, IppsMD5State* pCtx))
+IPPAPI(IppStatus, ippsMD5Pack,(const IppsMD5State* pState, Ipp8u* pBuffer))
+IPPAPI(IppStatus, ippsMD5Unpack,(const Ipp8u* pBuffer, IppsMD5State* pState))
 
-IPPAPI(IppStatus, ippsMD5Update,(const Ipp8u* pSrc, int len, IppsMD5State* pCtx))
-IPPAPI(IppStatus, ippsMD5GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsMD5State* pCtx))
-IPPAPI(IppStatus, ippsMD5Final,(Ipp8u* pMD, IppsMD5State* pCtx))
+IPPAPI(IppStatus, ippsMD5Update,(const Ipp8u* pSrc, int len, IppsMD5State* pState))
+IPPAPI(IppStatus, ippsMD5GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsMD5State* pState))
+IPPAPI(IppStatus, ippsMD5Final,(Ipp8u* pMD, IppsMD5State* pState))
 IPPAPI(IppStatus, ippsMD5MessageDigest,(const Ipp8u* pMsg, int len, Ipp8u* pMD))
 
 /* SM3 Hash Primitives */
 IPPAPI(IppStatus, ippsSM3GetSize,(int* pSize))
-IPPAPI(IppStatus, ippsSM3Init,(IppsSM3State* pCtx))
-IPPAPI(IppStatus, ippsSM3Duplicate,(const IppsSM3State* pSrcCtx, IppsSM3State* pDstCtx))
+IPPAPI(IppStatus, ippsSM3Init,(IppsSM3State* pState))
+IPPAPI(IppStatus, ippsSM3Duplicate,(const IppsSM3State* pSrcState, IppsSM3State* pDstState))
 
-IPPAPI(IppStatus, ippsSM3Pack,(const IppsSM3State* pCtx, Ipp8u* pBuffer))
-IPPAPI(IppStatus, ippsSM3Unpack,(const Ipp8u* pBuffer, IppsSM3State* pCtx))
+IPPAPI(IppStatus, ippsSM3Pack,(const IppsSM3State* pState, Ipp8u* pBuffer))
+IPPAPI(IppStatus, ippsSM3Unpack,(const Ipp8u* pBuffer, IppsSM3State* pState))
 
-IPPAPI(IppStatus, ippsSM3Update,(const Ipp8u* pSrc, int len, IppsSM3State* pCtx))
-IPPAPI(IppStatus, ippsSM3GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSM3State* pCtx))
-IPPAPI(IppStatus, ippsSM3Final,(Ipp8u* pMD, IppsSM3State* pCtx))
+IPPAPI(IppStatus, ippsSM3Update,(const Ipp8u* pSrc, int len, IppsSM3State* pState))
+IPPAPI(IppStatus, ippsSM3GetTag,(Ipp8u* pTag, Ipp32u tagLen, const IppsSM3State* pState))
+IPPAPI(IppStatus, ippsSM3Final,(Ipp8u* pMD, IppsSM3State* pState))
 IPPAPI(IppStatus, ippsSM3MessageDigest,(const Ipp8u* pMsg, int len, Ipp8u* pMD))
 
 /* generalized Hash Primitives */
 IPPAPI(IppStatus, ippsHashGetSize,(int* pSize))
-IPPAPI(IppStatus, ippsHashInit,(IppsHashState* pCtx, IppHashAlgId hashAlg))
+IPPAPI(IppStatus, ippsHashInit,(IppsHashState* pState, IppHashAlgId hashAlg))
 
-IPPAPI(IppStatus, ippsHashPack,(const IppsHashState* pCtx, Ipp8u* pBuffer, int bufSize))
-IPPAPI(IppStatus, ippsHashUnpack,(const Ipp8u* pBuffer, IppsHashState* pCtx))
-IPPAPI(IppStatus, ippsHashDuplicate,(const IppsHashState* pSrcCtx, IppsHashState* pDstCtx))
+IPPAPI(IppStatus, ippsHashPack,(const IppsHashState* pState, Ipp8u* pBuffer, int bufSize))
+IPPAPI(IppStatus, ippsHashUnpack,(const Ipp8u* pBuffer, IppsHashState* pState))
+IPPAPI(IppStatus, ippsHashDuplicate,(const IppsHashState* pSrcState, IppsHashState* pDstState))
 
-IPPAPI(IppStatus, ippsHashUpdate,(const Ipp8u* pSrc, int len, IppsHashState* pCtx))
-IPPAPI(IppStatus, ippsHashGetTag,(Ipp8u* pMD, int tagLen, const IppsHashState* pCtx))
-IPPAPI(IppStatus, ippsHashFinal,(Ipp8u* pMD, IppsHashState* pCtx))
+IPPAPI(IppStatus, ippsHashUpdate,(const Ipp8u* pSrc, int len, IppsHashState* pState))
+IPPAPI(IppStatus, ippsHashGetTag,(Ipp8u* pTag, int tagLen, const IppsHashState* pState))
+IPPAPI(IppStatus, ippsHashFinal,(Ipp8u* pMD, IppsHashState* pState))
 IPPAPI(IppStatus, ippsHashMessage,(const Ipp8u* pMsg, int len, Ipp8u* pMD, IppHashAlgId hashAlg))
 
 /* method based generalized (reduced memory footprint) Hash Primitives */
@@ -476,15 +508,15 @@ IPPAPI( const IppsHashMethod*, ippsHashMethod_SHA512_256, (void) )
 IPPAPI( const IppsHashMethod*, ippsHashMethod_SHA512_224, (void) )
 
 IPPAPI(IppStatus, ippsHashGetSize_rmf,(int* pSize))
-IPPAPI(IppStatus, ippsHashInit_rmf,(IppsHashState_rmf* pCtx, const IppsHashMethod* pMethod))
+IPPAPI(IppStatus, ippsHashInit_rmf,(IppsHashState_rmf* pState, const IppsHashMethod* pMethod))
 
-IPPAPI(IppStatus, ippsHashPack_rmf,(const IppsHashState_rmf* pCtx, Ipp8u* pBuffer, int bufSize))
-IPPAPI(IppStatus, ippsHashUnpack_rmf,(const Ipp8u* pBuffer, IppsHashState_rmf* pCtx))
-IPPAPI(IppStatus, ippsHashDuplicate_rmf,(const IppsHashState_rmf* pSrcCtx, IppsHashState_rmf* pDstCtx))
+IPPAPI(IppStatus, ippsHashPack_rmf,(const IppsHashState_rmf* pState, Ipp8u* pBuffer, int bufSize))
+IPPAPI(IppStatus, ippsHashUnpack_rmf,(const Ipp8u* pBuffer, IppsHashState_rmf* pState))
+IPPAPI(IppStatus, ippsHashDuplicate_rmf,(const IppsHashState_rmf* pSrcState, IppsHashState_rmf* pDstState))
 
-IPPAPI(IppStatus, ippsHashUpdate_rmf,(const Ipp8u* pSrc, int len, IppsHashState_rmf* pCtx))
-IPPAPI(IppStatus, ippsHashGetTag_rmf,(Ipp8u* pMD, int tagLen, const IppsHashState_rmf* pCtx))
-IPPAPI(IppStatus, ippsHashFinal_rmf,(Ipp8u* pMD, IppsHashState_rmf* pCtx))
+IPPAPI(IppStatus, ippsHashUpdate_rmf,(const Ipp8u* pSrc, int len, IppsHashState_rmf* pState))
+IPPAPI(IppStatus, ippsHashGetTag_rmf,(Ipp8u* pMD, int tagLen, const IppsHashState_rmf* pState))
+IPPAPI(IppStatus, ippsHashFinal_rmf,(Ipp8u* pMD, IppsHashState_rmf* pState))
 IPPAPI(IppStatus, ippsHashMessage_rmf,(const Ipp8u* pMsg, int len, Ipp8u* pMD, const IppsHashMethod* pMethod))
 
 /* general MGF Primitives*/
@@ -888,48 +920,48 @@ IPPAPI(IppStatus, ippsECCPGetSizeStd224r1,(int* pSize))
 IPPAPI(IppStatus, ippsECCPGetSizeStd256r1,(int* pSize))
 IPPAPI(IppStatus, ippsECCPGetSizeStd384r1,(int* pSize))
 IPPAPI(IppStatus, ippsECCPGetSizeStd521r1,(int* pSize))
-IPPAPI(IppStatus, ippsECCPGetSizeStdSM2,(int* pSize))
+IPPAPI(IppStatus, ippsECCPGetSizeStdSM2,  (int* pSize))
 
-IPPAPI(IppStatus, ippsECCPInit,(int feBitSize, IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStd128r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStd128r2,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStd192r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStd224r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStd256r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStd384r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStd521r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPInitStdSM2,(IppsECCPState* pECC))
+IPPAPI(IppStatus, ippsECCPInit,(int feBitSize, IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStd128r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStd128r2,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStd192r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStd224r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStd256r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStd384r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStd521r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPInitStdSM2,  (IppsECCPState* pEC))
 
 IPPAPI(IppStatus, ippsECCPSet,(const IppsBigNumState* pPrime,
                                const IppsBigNumState* pA, const IppsBigNumState* pB,
                                const IppsBigNumState* pGX,const IppsBigNumState* pGY,const IppsBigNumState* pOrder,
                                int cofactor,
-                               IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd,(IppECCType flag, IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd128r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd128r2,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd192r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd224r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd256r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd384r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStd521r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPSetStdSM2,(IppsECCPState* pECC))
+                               IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd,(IppECCType flag, IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd128r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd128r2,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd192r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd224r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd256r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd384r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStd521r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPSetStdSM2,  (IppsECCPState* pEC))
 
-IPPAPI(IppStatus, ippsECCPBindGxyTblStd192r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPBindGxyTblStd224r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPBindGxyTblStd256r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPBindGxyTblStd384r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPBindGxyTblStd521r1,(IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPBindGxyTblStdSM2,  (IppsECCPState* pECC))
+IPPAPI(IppStatus, ippsECCPBindGxyTblStd192r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPBindGxyTblStd224r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPBindGxyTblStd256r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPBindGxyTblStd384r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPBindGxyTblStd521r1,(IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPBindGxyTblStdSM2,  (IppsECCPState* pEC))
 
 IPPAPI(IppStatus, ippsECCPGet,(IppsBigNumState* pPrime,
                                IppsBigNumState* pA, IppsBigNumState* pB,
                                IppsBigNumState* pGX,IppsBigNumState* pGY,IppsBigNumState* pOrder,
                                int* cofactor,
-                               IppsECCPState* pECC))
-IPPAPI(IppStatus, ippsECCPGetOrderBitSize,(int* pBitSize, IppsECCPState* pECC))
+                               IppsECCPState* pEC))
+IPPAPI(IppStatus, ippsECCPGetOrderBitSize,(int* pBitSize, IppsECCPState* pEC))
 
-IPPAPI(IppStatus, ippsECCPValidate,(int nTrials, IppECResult* pResult, IppsECCPState* pECC,
+IPPAPI(IppStatus, ippsECCPValidate,(int nTrials, IppECResult* pResult, IppsECCPState* pEC,
                                     IppBitSupplier rndFunc, void* pRndParam))
 
 /* EC Point */
@@ -939,119 +971,119 @@ IPPAPI(IppStatus, ippsECCPPointInit,(int feBitSize, IppsECCPPointState* pPoint))
 
 /* Setup/retrieve point's coordinates */
 IPPAPI(IppStatus, ippsECCPSetPoint,(const IppsBigNumState* pX, const IppsBigNumState* pY,
-                                    IppsECCPPointState* pPoint, IppsECCPState* pECC))
+                                    IppsECCPPointState* pPoint, IppsECCPState* pEC))
 
-IPPAPI(IppStatus, ippsECCPSetPointAtInfinity,(IppsECCPPointState* pPoint, IppsECCPState* pECC))
+IPPAPI(IppStatus, ippsECCPSetPointAtInfinity,(IppsECCPPointState* pPoint, IppsECCPState* pEC))
 
 IPPAPI(IppStatus, ippsECCPGetPoint,(IppsBigNumState* pX, IppsBigNumState* pY,
-                                    const IppsECCPPointState* pPoint, IppsECCPState* pECC))
+                                    const IppsECCPPointState* pPoint, IppsECCPState* pEC))
 
 /* EC Point Operations */
 IPPAPI(IppStatus, ippsECCPCheckPoint,(const IppsECCPPointState* pP,
-                                      IppECResult* pResult, IppsECCPState* pECC))
+                                      IppECResult* pResult, IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPComparePoint,(const IppsECCPPointState* pP, const IppsECCPPointState* pQ,
-                                        IppECResult* pResult, IppsECCPState* pECC))
+                                        IppECResult* pResult, IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPNegativePoint,(const IppsECCPPointState* pP,
-                                         IppsECCPPointState* pR, IppsECCPState* pECC))
+                                         IppsECCPPointState* pR, IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPAddPoint,(const IppsECCPPointState* pP, const IppsECCPPointState* pQ,
-                                    IppsECCPPointState* pR, IppsECCPState* pECC))
+                                    IppsECCPPointState* pR, IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPMulPointScalar,(const IppsECCPPointState* pP, const IppsBigNumState* pK,
-                                          IppsECCPPointState* pR, IppsECCPState* pECC))
+                                          IppsECCPPointState* pR, IppsECCPState* pEC))
 
 /* Key Generation, Setup and Validation */
 IPPAPI(IppStatus, ippsECCPGenKeyPair,(IppsBigNumState* pPrivate, IppsECCPPointState* pPublic,
-                                      IppsECCPState* pECC,
+                                      IppsECCPState* pEC,
                                       IppBitSupplier rndFunc, void* pRndParam))
 IPPAPI(IppStatus, ippsECCPPublicKey,(const IppsBigNumState* pPrivate,
                                      IppsECCPPointState* pPublic,
-                                     IppsECCPState* pECC))
+                                     IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPValidateKeyPair,(const IppsBigNumState* pPrivate, const IppsECCPPointState* pPublic,
                                            IppECResult* pResult,
-                                           IppsECCPState* pECC))
+                                           IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPSetKeyPair,(const IppsBigNumState* pPrivate, const IppsECCPPointState* pPublic,
                                       IppBool regular,
-                                      IppsECCPState* pECC))
+                                      IppsECCPState* pEC))
 
 /* Shared Secret (DH scheme ) */
 IPPAPI(IppStatus, ippsECCPSharedSecretDH,(const IppsBigNumState* pPrivateA,
                                           const IppsECCPPointState* pPublicB,
                                           IppsBigNumState* pShare,
-                                          IppsECCPState* pECC))
+                                          IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPSharedSecretDHC,(const IppsBigNumState* pPrivateA,
                                            const IppsECCPPointState* pPublicB,
                                            IppsBigNumState* pShare,
-                                           IppsECCPState* pECC))
+                                           IppsECCPState* pEC))
 
 /* Sing/Verify */
 IPPAPI(IppStatus, ippsECCPSignDSA,(const IppsBigNumState* pMsgDigest,
                         const IppsBigNumState* pPrivate,
                         IppsBigNumState* pSignX, IppsBigNumState* pSignY,
-                        IppsECCPState* pECC))
+                        IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPVerifyDSA,(const IppsBigNumState* pMsgDigest,
                         const IppsBigNumState* pSignX, const IppsBigNumState* pSignY,
                         IppECResult* pResult,
-                        IppsECCPState* pECC))
+                        IppsECCPState* pEC))
 
 IPPAPI(IppStatus, ippsECCPSignNR,(const IppsBigNumState* pMsgDigest,
                         const IppsBigNumState* pPrivate,
                         IppsBigNumState* pSignX, IppsBigNumState* pSignY,
-                        IppsECCPState* pECC))
+                        IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPVerifyNR,(const IppsBigNumState* pMsgDigest,
                         const IppsBigNumState* pSignX, const IppsBigNumState* pSignY,
                         IppECResult* pResult,
-                        IppsECCPState* pECC))
+                        IppsECCPState* pEC))
 
 IPPAPI(IppStatus, ippsECCPSignSM2,(const IppsBigNumState* pMsgDigest,
                         const IppsBigNumState* pRegPrivate,
                         const IppsBigNumState* pEphPrivate,
                         IppsBigNumState* pSignR, IppsBigNumState* pSignS,
-                        IppsECCPState* pECC))
+                        IppsECCPState* pEC))
 IPPAPI(IppStatus, ippsECCPVerifySM2,(const IppsBigNumState* pMsgDigest,
                         const IppsECCPPointState* pRegPublic,
                         const IppsBigNumState* pSignR, const IppsBigNumState* pSignS,
                         IppECResult* pResult,
-                        IppsECCPState* pECC))
+                        IppsECCPState* pEC))
 
 /*
 // GF over prime and its extension
 */
-IPPAPI(IppStatus, ippsGFpGetSize, (int bitSize, int* pStateSizeInBytes))
-IPPAPI(IppStatus, ippsGFpInitArbitrary,(const IppsBigNumState* pPrime, int primeBitSize, IppsGFpState* pGF))
-IPPAPI(IppStatus, ippsGFpInitFixed,(int primeBitSize, const IppsGFpMethod* method, IppsGFpState* pGF))
-IPPAPI(IppStatus, ippsGFpInit,    (const IppsBigNumState* pPrime, int primeBitSize, const IppsGFpMethod* method, IppsGFpState* pGF))
-IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p192r1,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p224r1,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p256r1,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p384r1,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p521r1,(void) )
+IPPAPI(IppStatus, ippsGFpGetSize, (int feBitSize, int* pSize))
+IPPAPI(IppStatus, ippsGFpInitArbitrary,(const IppsBigNumState* pPrime, int primeBitSize, IppsGFpState* pGFp))
+IPPAPI(IppStatus, ippsGFpInitFixed,(int primeBitSize, const IppsGFpMethod* pGFpMethod, IppsGFpState* pGFp))
+IPPAPI(IppStatus, ippsGFpInit,    (const IppsBigNumState* pPrime, int primeBitSize, const IppsGFpMethod* pGFpMethod, IppsGFpState* pGFp))
+IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p192r1, (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p224r1, (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p256r1, (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p384r1, (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p521r1, (void) )
 IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p256sm2,(void) )
 IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p256bn, (void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p256,  (void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpMethod_pArb,  (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpMethod_p256,   (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpMethod_pArb,   (void) )
 
-IPPAPI(IppStatus, ippsGFpxGetSize,(const IppsGFpState* pGroundGF, int degree, int* pStateSizeInBytes))
-IPPAPI(IppStatus, ippsGFpxInit,   (const IppsGFpState* pGroundGF, int extDeg, const IppsGFpElement* const ppGroundElm[], int ne, const IppsGFpMethod* method, IppsGFpState* pGFpx))
-IPPAPI(IppStatus, ippsGFpxInitBinomial,(const IppsGFpState* pGroundGF, int extDeg, const IppsGFpElement* pGroundElm, const IppsGFpMethod* method, IppsGFpState* pGFpx))
+IPPAPI(IppStatus, ippsGFpxGetSize,(const IppsGFpState* pGroundGF, int degree, int* pSize))
+IPPAPI(IppStatus, ippsGFpxInit,   (const IppsGFpState* pGroundGF, int extDeg, const IppsGFpElement* const ppGroundElm[], int nElm, const IppsGFpMethod* pGFpMethod, IppsGFpState* pGFpx))
+IPPAPI(IppStatus, ippsGFpxInitBinomial,(const IppsGFpState* pGroundGF, int extDeg, const IppsGFpElement* pGroundElm, const IppsGFpMethod* pGFpMethod, IppsGFpState* pGFpx))
 IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom2_epid2,(void) )
 IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom3_epid2,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom2,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom3,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom,(void) )
-IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_com,  (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom2,      (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom3,      (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_binom,       (void) )
+IPPAPI( const IppsGFpMethod*, ippsGFpxMethod_com,         (void) )
 
-IPPAPI(IppStatus, ippsGFpScratchBufferSize,(int nExponents, int ExpBitSize, const IppsGFpState* pGF, int* pBufferSize))
+IPPAPI(IppStatus, ippsGFpScratchBufferSize,(int nExponents, int ExpBitSize, const IppsGFpState* pGFp, int* pBufferSize))
 
 IPPAPI(IppStatus, ippsGFpElementGetSize,(const IppsGFpState* pGFp, int* pElementSize))
 IPPAPI(IppStatus, ippsGFpElementInit,   (const Ipp32u* pA, int lenA, IppsGFpElement* pR, IppsGFpState* pGFp))
 
-IPPAPI(IppStatus, ippsGFpSetElement,      (const Ipp32u* pA, int nsA, IppsGFpElement* pR, IppsGFpState* pGFp))
-IPPAPI(IppStatus, ippsGFpSetElementRegular,(const IppsBigNumState* pBN, IppsGFpElement* pElm, IppsGFpState* pGF))
+IPPAPI(IppStatus, ippsGFpSetElement,      (const Ipp32u* pA, int lenA, IppsGFpElement* pR, IppsGFpState* pGFp))
+IPPAPI(IppStatus, ippsGFpSetElementRegular,(const IppsBigNumState* pBN, IppsGFpElement* pR, IppsGFpState* pGFp))
 IPPAPI(IppStatus, ippsGFpSetElementOctString,(const Ipp8u* pStr, int strSize, IppsGFpElement* pR, IppsGFpState* pGFp))
 IPPAPI(IppStatus, ippsGFpSetElementRandom,(IppsGFpElement* pR, IppsGFpState* pGFp, IppBitSupplier rndFunc, void* pRndParam))
-IPPAPI(IppStatus, ippsGFpSetElementHash,(const Ipp8u* pMsg, int msgLen, IppsGFpElement* pElm, IppsGFpState* pGF, IppHashAlgId hashID))
-IPPAPI(IppStatus, ippsGFpSetElementHash_rmf,(const Ipp8u* pMsg, int msgLen, IppsGFpElement* pElm, IppsGFpState* pGF, const IppsHashMethod* pMethod))
+IPPAPI(IppStatus, ippsGFpSetElementHash,(const Ipp8u* pMsg, int msgLen, IppsGFpElement* pElm, IppsGFpState* pGFp, IppHashAlgId hashID))
+IPPAPI(IppStatus, ippsGFpSetElementHash_rmf,(const Ipp8u* pMsg, int msgLen, IppsGFpElement* pElm, IppsGFpState* pGFp, const IppsHashMethod* pMethod))
 IPPAPI(IppStatus, ippsGFpCpyElement,(const IppsGFpElement* pA, IppsGFpElement* pR, IppsGFpState* pGFp))
-IPPAPI(IppStatus, ippsGFpGetElement,(const IppsGFpElement* pA, Ipp32u* pDataA, int nsA, IppsGFpState* pGFp))
+IPPAPI(IppStatus, ippsGFpGetElement,(const IppsGFpElement* pA, Ipp32u* pDataA, int lenA, IppsGFpState* pGFp))
 IPPAPI(IppStatus, ippsGFpGetElementOctString,(const IppsGFpElement* pA, Ipp8u* pStr, int strSize, IppsGFpState* pGFp))
 
 IPPAPI(IppStatus, ippsGFpCmpElement,(const IppsGFpElement* pA, const IppsGFpElement* pB, int* pResult, const IppsGFpState* pGFp))
@@ -1067,15 +1099,15 @@ IPPAPI(IppStatus, ippsGFpAdd, (const IppsGFpElement* pA, const IppsGFpElement* p
 IPPAPI(IppStatus, ippsGFpSub, (const IppsGFpElement* pA, const IppsGFpElement* pB,  IppsGFpElement* pR, IppsGFpState* pGFp))
 IPPAPI(IppStatus, ippsGFpMul, (const IppsGFpElement* pA, const IppsGFpElement* pB,  IppsGFpElement* pR, IppsGFpState* pGFp))
 IPPAPI(IppStatus, ippsGFpExp, (const IppsGFpElement* pA, const IppsBigNumState* pE, IppsGFpElement* pR, IppsGFpState* pGFp, Ipp8u* pScratchBuffer))
-IPPAPI(IppStatus, ippsGFpMultiExp,(const IppsGFpElement* const ppElmA[], const IppsBigNumState* const ppE[], int nItems, IppsGFpElement* pElmR, IppsGFpState* pGF, Ipp8u* pScratchBuffer))
+IPPAPI(IppStatus, ippsGFpMultiExp,(const IppsGFpElement* const ppElmA[], const IppsBigNumState* const ppE[], int nItems, IppsGFpElement* pR, IppsGFpState* pGFp, Ipp8u* pScratchBuffer))
 
 IPPAPI(IppStatus, ippsGFpAdd_PE,(const IppsGFpElement* pA, const IppsGFpElement* pParentB, IppsGFpElement* pR, IppsGFpState* pGFp))
 IPPAPI(IppStatus, ippsGFpSub_PE,(const IppsGFpElement* pA, const IppsGFpElement* pParentB, IppsGFpElement* pR, IppsGFpState* pGFp))
 IPPAPI(IppStatus, ippsGFpMul_PE,(const IppsGFpElement* pA, const IppsGFpElement* pParentB, IppsGFpElement* pR, IppsGFpState* pGFp))
 
 /* ================== */
-IPPAPI(IppStatus, ippsGFpECGetSize,(const IppsGFpState* pGF, int* pCtxSizeInBytes))
-IPPAPI(IppStatus, ippsGFpECInit,   (const IppsGFpState* pGF,
+IPPAPI(IppStatus, ippsGFpECGetSize,(const IppsGFpState* pGFp, int* pSize))
+IPPAPI(IppStatus, ippsGFpECInit,   (const IppsGFpState* pGFp,
                                     const IppsGFpElement* pA, const IppsGFpElement* pB,
                                     IppsGFpECState* pEC))
 
@@ -1086,15 +1118,15 @@ IPPAPI(IppStatus, ippsGFpECSetSubgroup,(const IppsGFpElement* pX, const IppsGFpE
                                         const IppsBigNumState* pCofactor,
                                         IppsGFpECState* pEC))
 
-IPPAPI(IppStatus, ippsGFpECInitStd128r1,(const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStd128r2,(const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStd192r1,(const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStd224r1,(const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStd256r1,(const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStd384r1,(const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStd521r1,(const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStdSM2,  (const IppsGFpState* pGF, IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECInitStdBN256,(const IppsGFpState* pGF, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStd128r1,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStd128r2,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStd192r1,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStd224r1,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStd256r1,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStd384r1,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStd521r1,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStdSM2,  (const IppsGFpState* pGFp, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECInitStdBN256,(const IppsGFpState* pGFp, IppsGFpECState* pEC))
 
 IPPAPI(IppStatus, ippsGFpECBindGxyTblStd192r1,(IppsGFpECState* pEC))
 IPPAPI(IppStatus, ippsGFpECBindGxyTblStd224r1,(IppsGFpECState* pEC))
@@ -1103,10 +1135,10 @@ IPPAPI(IppStatus, ippsGFpECBindGxyTblStd384r1,(IppsGFpECState* pEC))
 IPPAPI(IppStatus, ippsGFpECBindGxyTblStd521r1,(IppsGFpECState* pEC))
 IPPAPI(IppStatus, ippsGFpECBindGxyTblStdSM2,  (IppsGFpECState* pEC))
 
-IPPAPI(IppStatus, ippsGFpECGet,(IppsGFpState** const ppGF,
+IPPAPI(IppStatus, ippsGFpECGet,(IppsGFpState** const ppGFp,
                                 IppsGFpElement* pA, IppsGFpElement* pB,
                                 const IppsGFpECState* pEC))
-IPPAPI(IppStatus, ippsGFpECGetSubgroup,(IppsGFpState** const ppGF,
+IPPAPI(IppStatus, ippsGFpECGetSubgroup,(IppsGFpState** const ppGFp,
                                      IppsGFpElement* pX, IppsGFpElement* pY,
                                      IppsBigNumState* pOrder,IppsBigNumState* pCofactor,
                                      const IppsGFpECState* pEC))
@@ -1115,7 +1147,7 @@ IPPAPI(IppStatus, ippsGFpECScratchBufferSize,(int nScalars, const IppsGFpECState
 
 IPPAPI(IppStatus, ippsGFpECVerify,(IppECResult* pResult, IppsGFpECState* pEC, Ipp8u* pScratchBuffer))
 
-IPPAPI(IppStatus, ippsGFpECPointGetSize,(const IppsGFpECState* pEC, int* pSizeInBytes))
+IPPAPI(IppStatus, ippsGFpECPointGetSize,(const IppsGFpECState* pEC, int* pSize))
 IPPAPI(IppStatus, ippsGFpECPointInit,   (const IppsGFpElement* pX, const IppsGFpElement* pY, IppsGFpECPoint* pPoint, IppsGFpECState* pEC))
 
 IPPAPI(IppStatus, ippsGFpECSetPointAtInfinity,(IppsGFpECPoint* pPoint, IppsGFpECState* pEC))
@@ -1127,6 +1159,8 @@ IPPAPI(IppStatus, ippsGFpECSetPointHash,(Ipp32u hdr, const Ipp8u* pMsg, int msgL
 IPPAPI(IppStatus, ippsGFpECSetPointHash_rmf,(Ipp32u hdr, const Ipp8u* pMsg, int msgLen, IppsGFpECPoint* pPoint, IppsGFpECState* pEC, const IppsHashMethod* pMethod, Ipp8u* pScratchBuffer))
 IPPAPI(IppStatus, ippsGFpECGetPoint,(const IppsGFpECPoint* pPoint, IppsGFpElement* pX, IppsGFpElement* pY, IppsGFpECState* pEC))
 IPPAPI(IppStatus, ippsGFpECGetPointRegular,(const IppsGFpECPoint* pPoint, IppsBigNumState* pX, IppsBigNumState* pY, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECSetPointOctString,(const Ipp8u* pStr, int strLen, IppsGFpECPoint* pPoint, IppsGFpECState* pEC))
+IPPAPI(IppStatus, ippsGFpECGetPointOctString,(const IppsGFpECPoint* pPoint, Ipp8u* pStr, int strLen, IppsGFpECState* pEC))
 
 IPPAPI(IppStatus, ippsGFpECTstPoint,(const IppsGFpECPoint* pP, IppECResult* pResult, IppsGFpECState* pEC))
 IPPAPI(IppStatus, ippsGFpECTstPointInSubgroup,(const IppsGFpECPoint* pP, IppECResult* pResult, IppsGFpECState* pEC, Ipp8u* pScratchBuffer))
@@ -1186,6 +1220,23 @@ IPPAPI(IppStatus, ippsGFpECVerifySM2,(const IppsBigNumState* pMsgDigest,
                         const IppsBigNumState* pSignR, const IppsBigNumState* pSignS,
                         IppECResult* pResult,
                         IppsGFpECState* pEC, Ipp8u* pScratchBuffer))
+
+IPPAPI(IppStatus, ippsGFpECESGetSize_SM2, (const IppsGFpECState* pEC, int* pSize))
+IPPAPI(IppStatus, ippsGFpECESInit_SM2, (IppsGFpECState* pEC,
+                        IppsECESState_SM2* pState, int avaliableCtxSize))
+IPPAPI(IppStatus, ippsGFpECESSetKey_SM2, (const IppsBigNumState* pPrivate,
+                        const IppsGFpECPoint* pPublic,
+                        IppsECESState_SM2* pState,
+                        IppsGFpECState* pEC,
+                        Ipp8u* pEcScratchBuffer))
+IPPAPI(IppStatus, ippsGFpECESStart_SM2, (IppsECESState_SM2* pState))
+IPPAPI(IppStatus, ippsGFpECESEncrypt_SM2, (const Ipp8u* pInput, Ipp8u* pOutput,
+                        int dataLen, IppsECESState_SM2* pState))
+IPPAPI(IppStatus, ippsGFpECESDecrypt_SM2, (const Ipp8u* pInput, Ipp8u* pOutput,
+                        int dataLen, IppsECESState_SM2* pState))
+IPPAPI(IppStatus, ippsGFpECESFinal_SM2, (Ipp8u* pTag, int tagLen, IppsECESState_SM2* pState))
+IPPAPI(IppStatus, ippsGFpECESGetBuffersSize_SM2, (int* pPublicKeySize,
+                        int* pMaximumTagSize, const IppsECESState_SM2* pState))
 
 #ifdef  __cplusplus
 }
